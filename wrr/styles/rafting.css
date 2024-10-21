@@ -11,6 +11,9 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: var(--background-color);
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 header {
@@ -22,34 +25,41 @@ header {
 
 header h1 {
     margin-bottom: 10px;
+    font-size: 2rem;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline-block;
-    margin-right: 15px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
 }
 
 footer {
     background-color: var(--dark-yellow);
     color: white;
-    padding: 10px 20px; /* Consistent inner padding */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px; 
-    box-sizing: border-box; 
-    overflow: hidden;
+    height: 80px;
+    box-sizing: border-box;
 }
 
 footer p {
@@ -58,27 +68,168 @@ footer p {
 
 footer .social-icons {
     display: flex;
-    gap: 10px; 
-    overflow: hidden; 
-    max-width: 200px; 
+    gap: 10px;
 }
 
 footer .social-icons a {
+    width: 30px;
+    height: 30px;
     display: inline-block;
-    width: 25px; 
-    height: 25px; 
 }
 
 footer .social-icons img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     transition: opacity 0.3s;
 }
+
 footer .social-icons img:hover {
     opacity: 0.8;
 }
 
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+}
+
+.hero h2, .hero h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Newsletter Section */
+.newsletter {
+    text-align: center;
+    padding: 20px;
+}
+
+.newsletter form {
+    display: inline-block;
+    text-align: left;
+}
+
+.newsletter input {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter button {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.newsletter button:hover {
+    background-color: var(--accent-color);
+}
+
+/* Grid Content Layout */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+}
+
+.content-grid div {
+    text-align: center;
+}
+
+.content-grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Trip Descriptions Section */
+.trip-descriptions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.trip-descriptions article {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-descriptions img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Trips Table */
+.trips-table {
+    padding: 20px;
+    margin-top: 20px;
+    overflow-x: auto; /* Ensure mobile responsiveness */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--main-color);
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Contact Form */
 .contact-form textarea {
     width: 100%;
     margin: 5px 0;
@@ -87,12 +238,15 @@ footer .social-icons img:hover {
     border-radius: 4px;
 }
 
+/* Buttons */
 button {
     background-color: var(--main-color);
     border: none;
     color: white;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
